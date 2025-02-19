@@ -62,6 +62,6 @@
     },
     "custom/power": {
         "tooltip": false,
-        "format": ""
+        "format": "⏻"
     }
 }
