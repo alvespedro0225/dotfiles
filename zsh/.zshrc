@@ -23,7 +23,12 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias image='kitten icat'
 
-bindkey "^[[3~" delete-char
+
+#keybinding
+bindkey "^[[3~" delete-char #delete
+bindkey ";5D" backward-word #ctrl + 
+bindkey ";5C" forward-word #ctrl + 
+bindkey "^V" kill-line
 
 #add varables to PATH
 export PATH="$PATH:~/.dotnet/tools" #dotnet
