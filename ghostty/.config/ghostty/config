@@ -10,3 +10,4 @@ gtk-titlebar = false
 #custom-shader = /home/chris/crt.glsl
 keybind = ctrl+comma=ignore
 keybind = ctrl+r=ignore
+keybind = ctrl+q=text:connect D9:1B:56:B7:81:9F
