@@ -23,7 +23,6 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias image='kitten icat'
 
-
 #keybinding
 bindkey "^[[3~" delete-char #delete
 bindkey ";5D" backward-word #ctrl + 
@@ -34,9 +33,16 @@ bindkey "^V" kill-line
 export PATH="$PATH:~/.dotnet/tools" #dotnet
 export PATH="$PATH:/usr/bin/kitty" #kitty
 
-
+#SSH agent auto-start
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+# fi
+# if [ ! -f "$SSH_AUTH_SOCK" ]; then
+#     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+# fi
 
 #setup env varables
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export GTK_THEME=Adwaita:dark
 export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
 export QT_STYLE_OVERRIDE=Adwaita-Dark
