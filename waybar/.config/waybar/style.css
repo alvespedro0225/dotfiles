@@ -50,6 +50,7 @@ border-radius: 1rem;
 #network,
 #memory,
 #cpu,
+#temperature,
 #workspaces {
     margin-top: 0.5rem;
     padding: 0px 8px;
@@ -78,4 +79,8 @@ border-radius: 1rem;
     margin-top: 0.5rem;
     padding: 0px 10px 0px 10px;
     background-color: transparent;
+}
+
+#temperature.critical {
+    background-color: darkred;
 }
