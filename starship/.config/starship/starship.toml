@@ -1,15 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](surface0)\
+[](platinum)\
 $os\
-$username\
-[](bg:peach fg:surface0)\
+[](bg:crayola fg:platinum)\
 $directory\
-[](fg:peach bg:green)\
+[](bg:american fg:crayola)\
 $git_branch\
 $git_status\
-[](fg:green bg:teal)\
+[](bg:charleston fg:american)\
 $c\
 $rust\
 $golang\
@@ -19,15 +18,14 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:teal bg:blue)\
-$docker_context\
-[](fg:blue bg:purple)\
+$dotnet\
+[](bg:gunmetal fg:charleston)\
 $time\
-[ ](fg:purple)\
+[ ](fg:gunmetal)\
 $line_break$character"""
 
 
-palette = 'catppuccin_mocha'
+palette = 'tokyo_night_green'
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'
@@ -69,9 +67,29 @@ base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
 
+[palettes.tokyo_night]
+wild = "#a3aed2"
+black = "#090c0c"
+cornflower = "#769FF0"
+american = "#394260"
+charleston = "#212736"
+gunmetal = "#1d2230"
+platinum = "#e3e5e5"
+white = "#ffffff"
+
+[palettes.tokyo_night_green]
+wild = "#a3d2bc"
+black = "#090c0c"
+crayola = "#18B983"
+american = "#394260"
+charleston = "#212736"
+gunmetal = "#1d2230"
+platinum = "#e3e5e5"
+white = "#ffffff"
+
 [os]
 disabled = false
-style = "bg:surface0 fg:text"
+style = "bg:platinum fg:black"
 
 [os.symbols]
 Windows = "󰍲"
@@ -87,7 +105,7 @@ Fedora = "󰣛"
 Alpine = ""
 Amazon = ""
 Android = ""
-Arch = "󰣇"
+Arch = "󰣇 "
 Artix = "󰣇"
 CentOS = ""
 Debian = "󰣚"
@@ -101,7 +119,7 @@ style_root = "bg:surface0 fg:text"
 format = '[ $user ]($style)'
 
 [directory]
-style = "fg:mantle bg:peach"
+style = "bg:crayola fg:platinum"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -111,80 +129,70 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = "󰝚 "
 "Pictures" = " "
-"Developer" = "󰲋 "
+"code" = "󰲋 "
 
 [git_branch]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+style = "bg:american"
+format = '[[ $symbol $branch ](bg:american fg:crayola )]($style)'
 
 [git_status]
-style = "bg:teal"
-format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+style = "bg:american"
+format = '[[($all_status$ahead_behind )](bg:american fg:crayola )]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:charleston"
+format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)'
 
 [c]
 symbol = " "
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:charleston"
+format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:charleston"
+format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
-
-[php]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:charleston"
+format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)'
 
 [java]
 symbol = " "
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:charleston"
+format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
-
-[haskell]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:charleston"
+format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)'
 
 [python]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:charleston"
+format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)'
 
-[docker_context]
-symbol = ""
-style = "bg:mantle"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+[dotnet]
+symbol = ""
+style = "bg:charleston"
+format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)' 
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:peach"
-format = '[[  $time ](fg:mantle bg:purple)]($style)'
+style = "bg:gunmetal"
+format = '[[  $time ](bg:gunmetal fg:wild)]($style)'
 
 [line_break]
 disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:green)'
-error_symbol = '[](bold fg:red)'
+success_symbol = '[](bold fg:white)'
+error_symbol = '[](bold fg:crayola)'
 vimcmd_symbol = '[](bold fg:creen)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'

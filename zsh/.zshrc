@@ -43,7 +43,8 @@ bindkey -r "^A" # unbind
 bindkey "^A" kill-whole-line # ctrl + A
 bindkey -r "^F" # unbind
 bindkey -s "^F" 'y\n' # -s binds a string and \n executes it. so this executes y command
-
+bindkey -r "^T" # unbind
+bindkey -s "^T" 'tmux\n'
 #add varables to PATH
 export PATH="$PATH:~/.dotnet/tools" #dotnet
 export PATH="$PATH:/usr/bin/kitty" #kitty

@@ -1,45 +1,45 @@
-@import "mocha.css";
+@import "tokyo_dark_green.css";
 
 * {
     font-family: FantasqueSansMono Nerd Font;
     font-size: 17px;
-    min-height: 0;
+    min-height: 10px;
+    border-radius: 0;
+    border: none;
 }
 
 #waybar {
-background: transparent;
-color: @text;
-margin: 5px 5px;
-}
+    color: @crayola;
+    background: transparent;
+    margin: 5px 5px;
+    }
 
+
+/* left workspace */
 #workspaces {
-border-radius: 1rem;
-margin: 5px;
-background-color: @surface0;
-margin-left: 1rem;
+    border-radius: 1rem;
+    background-color: @background;
+    margin-left: 20px;
+    margin-top: 0.5rem;
 }
 
 #workspaces button {
-color: @lavender;
+    color: @wild;
+    border-radius: 1rem;
+    padding: 0.4rem;
+    }
+
+#workspaces button.active {
+color: @crayola;
 border-radius: 1rem;
-padding: 0.4rem;
 }
 
 #workspaces button.urgent {
-color: @darker-red;
-border-radius: 1rem;
+    background-color: @gunmetal;
+    border-radius: 1rem;
 }
 
-#workspaces button.active {
-color: @sky;
-border-radius: 1rem;
-}
-
-#workspaces button:hover {
-color: @sapphire;
-border-radius: 1rem;
-}
-
+#custom-power,
 #custom-music,
 #tray,
 #backlight,
@@ -50,55 +50,32 @@ border-radius: 1rem;
 #network,
 #memory,
 #cpu,
+#workspaces {
+    margin-top: 0.5rem;
+    padding: 0px 8px;
+    background-color: @background;
+}
+
+#network {
+    padding-left: 12px;
+    border-radius: 1rem 0px 0px 1rem;
+}
 
 #custom-power {
-background-color: @surface0;
-padding: 0.5rem 1rem;
-margin: 9px 0px;
-}
-
-#cpu{
-color: @green;
-}
-
-#memory{
-color: @green;
-}
-
-#network{
-color: @yellow;
-border-radius: 1rem 0px 0px 1rem;
-margin-left: 1rem;
-}
-
-#clock {
-color: @colorful-pink;
-border-radius: 0px 1rem 1rem 0px;
-margin-right: 1rem;
-}
-
-#pulseaudio {
-color: @purple;
+    border-radius: 0px 1rem 1rem 0px;
+    margin-right: 20px;
+    padding-right: 9px;
 }
 
 #custom-music {
-color: @mauve;
-border-radius: 1rem;
-}
-
-#bluetooth {
-border-radius: 1rem 0px 0px 1rem;
-color: @darker-blue;
-}
-
-#custom-power {
-margin-right: 1rem;
-border-radius: 0px 1rem 1rem 0px;
-color: @darker-red;
+    border-radius: 1rem 1rem 1rem 1rem;
+    padding: 0px 15px 0px 15px;
 }
 
 #tray {
-margin-right: 1rem;
-border-radius: 1rem;
-background: transparent;
+    border-radius: 1rem 1rem 1rem 1rem;
+    margin-right: 10px;
+    margin-top: 0.5rem;
+    padding: 0px 10px 0px 10px;
+    background-color: transparent;
 }
