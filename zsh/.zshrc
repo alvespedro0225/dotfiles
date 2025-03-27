@@ -42,8 +42,8 @@ function run_tmux {
 
 #keybindings
 bindkey "^[[3~" delete-char # delete
-bindkey ";5D" backward-word # ctrl + 
-bindkey ";5C" forward-word # ctrl + 
+bindkey "^[[1;5D" backward-word # ctrl + 
+bindkey "^[[1;5C" forward-word # ctrl + 
 bindkey -r "^A" # unbind
 bindkey "^A" kill-whole-line # ctrl + A
 bindkey -r "^F" # unbind
