@@ -24,7 +24,7 @@ alias grep='grep --color=auto'
 alias image='kitten icat'
 
 # changes directory to yazi when leaving. Q not to.
-function y() {
+function run_yazi {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -33,6 +33,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+zle -N run_yazi
+
+function run_tmux {
+	tmux
+}
 
 
 #keybindings
@@ -42,20 +47,19 @@ bindkey ";5C" forward-word # ctrl + 
 bindkey -r "^A" # unbind
 bindkey "^A" kill-whole-line # ctrl + A
 bindkey -r "^F" # unbind
-bindkey -s "^F" 'y\n' # -s binds a string and \n executes it. so this executes y command
+bindkey "^F" run_yazi # -s binds a string and \n executes it. so this executes y command
 bindkey -r "^T" # unbind
-bindkey -s "^T" 'tmux\n'
 #add varables to PATH
-export PATH="$PATH:~/.dotnet/tools" #dotnet
+export PATH="$PATH:/home/pedro/.dotnet/tools" #dotnet
 export PATH="$PATH:/usr/bin/kitty" #kitty
-
+export PATH="$PATH:/home/pedro/Emulation/Emulators/3DS/Borked" #3ds emu
 #setup env varables
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export GTK_THEME=Adwaita:dark
 export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
 export QT_STYLE_OVERRIDE=Adwaita-Dark
 export EDITOR=nvim
-
+export TERM=ghostty
 #open rider from terminal without attaching it's process to the terminal
 #function so that it can receive files to open
 rider()

@@ -11,3 +11,6 @@ gtk-titlebar = false
 keybind = ctrl+comma=ignore
 keybind = ctrl+r=ignore
 keybind = ctrl+q=text:connect D9:1B:56:B7:81:9F
+keybind = ctrl+ç=text:systemctl
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = performable:ctrl+v=paste_from_clipboard

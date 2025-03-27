@@ -54,7 +54,8 @@
     "custom/power": {
         "tooltip": false,
         "format": "⏻ ",
-        "on-click":"ghostty -e sudo poweroff"
+        "on-click":"ghostty -e poweroff",
+	"on-click-middle":"ghostty -e systemctl suspend"
     },
     "custom/music": {
         "format": "  {}",
