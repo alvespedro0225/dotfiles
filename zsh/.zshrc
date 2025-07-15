@@ -16,9 +16,6 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#open spotify from terminal without attaching it's process to the terminal
-alias spotify='(nohup spotify > /dev/null 2>&1 &)'
-
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias image='kitten icat'
@@ -53,6 +50,8 @@ bindkey -r "^T" # unbind
 export PATH="$PATH:/home/pedro/.dotnet/tools" #dotnet
 export PATH="$PATH:/usr/bin/kitty" #kitty
 export PATH="$PATH:/home/pedro/Emulation/Emulators/3DS/Borked" #3ds emu
+export PATH="$PATH:/home/pedro/Emulation/Switch/Ryujinx"
+export PATH="$PATH:/home/pedro/.cargo/bin"
 #setup env varables
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export GTK_THEME=Adwaita:dark
@@ -60,6 +59,8 @@ export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
 export QT_STYLE_OVERRIDE=Adwaita-Dark
 export EDITOR=nvim
 export TERM=ghostty
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+#export RUST_BACKTRACE=1
 #open rider from terminal without attaching it's process to the terminal
 #function so that it can receive files to open
 rider()
@@ -80,3 +81,7 @@ webstorm()
 {
     (nohup ~/.local/share/JetBrains/Toolbox/apps/webstorm/bin/webstorm "$@" > /dev/null 2>&1 &)
 }
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
