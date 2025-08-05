@@ -19,7 +19,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias image='kitten icat'
-
+alias sudo='sudo-rs'
 # changes directory to yazi when leaving. Q not to.
 function run_yazi {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
