@@ -5,10 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias grep='rg'
-alias image='kitten icat'
-alias sudo='sudo-rs'
 PS1='[\u@\h \W]\$ '
 
 # Updating PATH

@@ -14,4 +14,10 @@ if status is-interactive
 
 	# Load starship
     starship init fish | source
+
+    alias ls="ls --color=auto"
+    alias grep="rg"
+    alias image="kitten icat"
+    alias sudo="sudo-rs"
+
 end
