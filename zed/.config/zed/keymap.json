@@ -1,0 +1,37 @@
+[
+  {
+    "bindings": {
+      "alt-1": "project_panel::ToggleFocus"
+    }
+  },
+
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-k": "editor::Hover",
+      "ctrl-w": "pane::CloseActiveItem",
+      "alt-h": "pane::ActivatePreviousItem",
+      "alt-l": "pane::ActivateNextItem",
+      "space": null,
+      "space /": "buffer_search::Deploy",
+      "ctrl-b": "editor::GoToDefinition",
+      "ctrl-alt-o": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "up": null,
+      "left": null,
+      "right": null,
+      "down": null
+    }
+  },
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      "pageup": "search::SelectPreviousMatch",
+      "pagedown": "search::SelectNextMatch"
+    }
+  }
+]

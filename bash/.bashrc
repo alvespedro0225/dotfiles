@@ -27,3 +27,4 @@ export TERM=ghostty
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 exec fish
+. "$HOME/.cargo/env"

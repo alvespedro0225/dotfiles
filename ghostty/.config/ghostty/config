@@ -1,16 +1,9 @@
 theme = tokyonight_moon
-# theme = GruvboxDark
-# font-family = Meslo LGS Nerd Font Mono
-# font-family = CaskaydiaMono Nerd Font
 font-family = Hack Nerd Font
 font-size = 14
 background-opacity = 0.93 
 gtk-titlebar = false
-# custom-shader = /home/chris/bloom.glsl
-#custom-shader = /home/chris/crt.glsl
 keybind = ctrl+comma=ignore
-#keybind = ctrl+r=ignore
 keybind = ctrl+q=text:connect D9:1B:56:B7:81:9F
-keybind = ctrl+ç=text:systemctl
 keybind = performable:ctrl+c=copy_to_clipboard
 keybind = performable:ctrl+v=paste_from_clipboard
