@@ -8,9 +8,9 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "icon_theme": "Colored Zed Icons Theme Dark",
-  "telemetry": {
-    "metrics": false
-  },
+  // "telemetry": {
+  //   "metrics": false
+  // },
   "disable_ai": true,
   "vim_mode": true,
   "relative_line_numbers": true,

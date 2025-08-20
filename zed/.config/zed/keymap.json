@@ -4,7 +4,21 @@
       "alt-1": "project_panel::ToggleFocus"
     }
   },
-
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == insert || vim_mode == visual)",
+    "bindings": {
+      "ctrl-c": "editor::Copy",
+      "ctrl-x": "editor::Cut",
+      "ctrl-v": "editor::Paste"
+    }
+  },
+  {
+    "context": "Editor && (showing_completions)",
+    "bindings": {
+      "up": "editor::MoveUp",
+      "down": "editor::MoveDown"
+    }
+  },
   {
     "context": "Editor",
     "bindings": {
@@ -12,9 +26,9 @@
       "ctrl-w": "pane::CloseActiveItem",
       "alt-h": "pane::ActivatePreviousItem",
       "alt-l": "pane::ActivateNextItem",
+      "alt-left": "pane::ActivatePreviousItem",
+      "alt-right": "pane::ActivateNextItem",
       "space": null,
-      "space /": "buffer_search::Deploy",
-      "ctrl-b": "editor::GoToDefinition",
       "ctrl-alt-o": "file_finder::Toggle"
     }
   },
@@ -24,7 +38,8 @@
       "up": null,
       "left": null,
       "right": null,
-      "down": null
+      "down": null,
+      "space /": "buffer_search::Deploy"
     }
   },
   {

@@ -19,5 +19,5 @@ if status is-interactive
     alias grep="rg"
     alias image="kitten icat"
     alias sudo="sudo-rs"
-
+    alias zed="zeditor"
 end
