@@ -7,6 +7,15 @@
 
 PS1='[\u@\h \W]\$ '
 
+# Start ssh agent if none started
+#
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [ ! -f "$SSH_AUTH_SOCK" ]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+
 # Updating PATH
 
 export PATH="$PATH:/home/pedro/.dotnet/tools" #dotnet
@@ -18,7 +27,6 @@ export PATH="$PATH:/home/pedro/.cargo/bin"
 # Exporting ENV variables
 
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export GTK_THEME=Adwaita:dark
 export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
 export QT_STYLE_OVERRIDE=Adwaita-Dark
