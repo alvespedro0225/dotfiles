@@ -1,7 +1,44 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
 [
   {
+    "context": "Pane",
     "bindings": {
-      "alt-1": "project_panel::ToggleFocus"
+      "shift-alt-h": "workspace::ActivatePreviousPane",
+      "shift-alt-left": "workspace::ActivatePreviousPane",
+      "shift-alt-l": "workspace::ActivateNextPane",
+      "shift-alt-right": "workspace::ActivateNextPane"
+    }
+  },
+  {
+    "context": "Workspace && !Editor",
+    "bindings": {
+      "\\": "workspace::ToggleLeftDock",
+      "space space": "command_palette::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-6": "workspace::ToggleBottomDock",
+      "ctrl-n": null,
+      "ctrl-p": null,
+      "alt-h": "pane::ActivatePreviousItem",
+      "alt-left": "pane::ActivatePreviousItem",
+      "alt-l": "pane::ActivateNextItem",
+      "alt-right": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Editor && vim_mode != insert",
+    "bindings": {
+      "s a": "vim::PushAddSurrounds",
+      "s s": "vim::Substitute"
     }
   },
   {
@@ -13,40 +50,50 @@
     }
   },
   {
-    "context": "Editor && (showing_completions)",
+    "context": "BufferSearchBar",
     "bindings": {
-      "up": "editor::MoveUp",
-      "down": "editor::MoveDown"
+      "ctrl-n": "search::SelectNextMatch",
+      "ctrl-p": "search::SelectPreviousMatch"
     }
   },
   {
-    "context": "Editor",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
-      "ctrl-k": "editor::Hover",
-      "ctrl-w": "pane::CloseActiveItem",
-      "alt-h": "pane::ActivatePreviousItem",
-      "alt-l": "pane::ActivateNextItem",
-      "alt-left": "pane::ActivatePreviousItem",
-      "alt-right": "pane::ActivateNextItem",
-      "space": null,
-      "ctrl-alt-o": "file_finder::Toggle"
+      "\\": "workspace::ToggleLeftDock",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "a": "project_panel::NewFile"
     }
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "ctrl-:": "editor::ToggleInlayHints",
+      "ctrl-k": "editor::Hover",
+      "space space": "command_palette::Toggle",
+      "g r a": "editor::ToggleCodeActions",
+      "g r n ": "editor::Rename",
+      "g r d": "editor::GoToDefinition",
+      "g r r": "editor::FindAllReferences",
+      "space s f": "file_finder::Toggle",
+      "space g": "project_symbols::Toggle",
+      "ctrl-w": "pane::CloseActiveItem",
+      "ctrl-b": "editor::ToggleBreakpoint",
+      "\\": "vim::ToggleProjectPanelFocus",
       "up": null,
+      "down": null,
       "left": null,
       "right": null,
-      "down": null,
-      "space /": "buffer_search::Deploy"
+      "@ @": "vim::ReplayLastRecording",
+      "ctrl-6": "workspace::ToggleBottomDock"
     }
   },
   {
-    "context": "BufferSearchBar",
+    "context": "Editor && vim_mode == insert && showing_completions",
     "bindings": {
-      "pageup": "search::SelectPreviousMatch",
-      "pagedown": "search::SelectNextMatch"
+      "ctrl-y": "editor::ConfirmCompletionReplace",
+      "ctrl-h": "editor::ConfirmCompletionInsert",
+      "enter": null
     }
   }
 ]

@@ -7,19 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "icon_theme": "Colored Zed Icons Theme Dark",
-  // "telemetry": {
-  //   "metrics": false
-  // },
   "disable_ai": true,
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "vim_mode": true,
-  "relative_line_numbers": true,
-  "ui_font_features": {
-    "calt": false
-  },
-  "buffer_font_features": {
-    "calt": false
-  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": "VSCode Dark Modern",
+  "relative_line_numbers": "enabled",
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
@@ -60,20 +54,28 @@
       "format_on_save": "on",
       "formatter": [
         {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
+          "code_action": "source.organizeImports.ruff"
         },
         {
-          "language_server": { "name": "ruff" }
+          "code_action": "source.fixAll.ruff"
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
         }
       ]
+    },
+    "CSS": {
+      "language_servers": ["eslint", "vscode-css-language-server"]
+    },
+    "C": {
+      "format_on_save": "on"
     }
   },
-  "journal": {
-    "path": "~/code",
-    "hour_format": "hour24"
+  "unnecessary_code_fade": 0.4,
+  "inlay_hints": {
+    "enabled": true
   },
   "hover_popover_enabled": false,
   "tabs": {
@@ -83,26 +85,14 @@
     "activate_on_close": "left_neighbour",
     "show_close_button": "hidden"
   },
-  "drag_and_drop_selection": {
-    "enabled": false
+  "ui_font_features": {
+    "calt": false
   },
-  "toolbar": {
-    "agent_review": false,
-    "quick_actions": false,
-    "code_actions": false,
-    "selections_menu": false
+  "buffer_font_features": {
+    "calt": false
   },
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "base_keymap": "JetBrains",
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "theme": {
-    "mode": "system",
-    "light": "Personal",
-    "dark": "Tokyo Night Storm"
-  },
-  "unnecessary_code_fade": 0.4,
-  "inlay_hints": {
-    "enabled": true
+  "journal": {
+    "path": "~/code",
+    "hour_format": "hour24"
   }
 }

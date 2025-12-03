@@ -34,6 +34,7 @@ return {
       rust = { 'rustfmt' },
       javascript = { 'biome', stop_after_first = true },
       typescript = { 'biome', stop_after_first = true },
+      go = { 'gofmt' },
     },
   },
 }
