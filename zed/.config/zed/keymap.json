@@ -19,7 +19,8 @@
     "context": "Workspace && !Editor",
     "bindings": {
       "\\": "workspace::ToggleLeftDock",
-      "space space": "command_palette::Toggle"
+      "space space": "command_palette::Toggle",
+      "space s f": "file_finder::Toggle"
     }
   },
   {
@@ -32,13 +33,6 @@
       "alt-left": "pane::ActivatePreviousItem",
       "alt-l": "pane::ActivateNextItem",
       "alt-right": "pane::ActivateNextItem"
-    }
-  },
-  {
-    "context": "Editor && vim_mode != insert",
-    "bindings": {
-      "s a": "vim::PushAddSurrounds",
-      "s s": "vim::Substitute"
     }
   },
   {
@@ -85,7 +79,9 @@
       "left": null,
       "right": null,
       "@ @": "vim::ReplayLastRecording",
-      "ctrl-6": "workspace::ToggleBottomDock"
+      "ctrl-6": "workspace::ToggleBottomDock",
+      "s a": "vim::PushAddSurrounds",
+      "s s": "vim::Substitute"
     }
   },
   {
@@ -93,6 +89,13 @@
     "bindings": {
       "ctrl-y": "editor::ConfirmCompletionReplace",
       "ctrl-h": "editor::ConfirmCompletionInsert",
+      "enter": null
+    }
+  },
+  {
+    "context": "Editor && showing_code_actions",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCodeAction",
       "enter": null
     }
   }
