@@ -23,7 +23,7 @@ export PATH="$PATH:/usr/bin/kitty" #kitty
 export PATH="$PATH:/home/pedro/Emulation/Emulators/3DS/Borked" #3ds emu
 export PATH="$PATH:/home/pedro/Emulation/Switch/Ryujinx"
 export PATH="$PATH:/home/pedro/.cargo/bin"
-export PATH="$PATH:/home/pedro/flutter/bin"
+export PATH="$PATH:/opt/flutter/bin"
 
 # Exporting ENV variables
 

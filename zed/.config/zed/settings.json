@@ -29,43 +29,43 @@
           }
         }
       }
-    },
-    "basedpyright": {
-      "binary": {
-        "path": ".venv/bin/basedpyright-langserver",
-        "arguments": ["--stdio"]
-      },
-      "settings": {
-        "python": {
-          "pythonPath": ".venv/bin/python"
-        },
-        "basedpyright.analysis": {
-          "diagnosticMode": "workspace",
-          "inlayHints": {
-            "callArgumentNames": false
-          }
-        }
-      }
     }
+    // "basedpyright": {
+    //   "binary": {
+    //     "path": ".venv/bin/basedpyright-langserver",
+    //     "arguments": ["--stdio"]
+    //   },
+    //   "settings": {
+    //     "python": {
+    //       "pythonPath": ".venv/bin/python"
+    //     },
+    //     "basedpyright.analysis": {
+    //       "diagnosticMode": "workspace",
+    //       "inlayHints": {
+    //         "callArgumentNames": false
+    //       }
+    //     }
+    //   }
+    // }
   },
   "languages": {
-    "Python": {
-      "language_servers": ["basedpyright", "ruff", "!pyright"],
-      "format_on_save": "on",
-      "formatter": [
-        {
-          "code_action": "source.organizeImports.ruff"
-        },
-        {
-          "code_action": "source.fixAll.ruff"
-        },
-        {
-          "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
-    },
+    // "Python": {
+    // "language_servers": ["basedpyright", "ruff", "!pyright"],
+    // "format_on_save": "on",
+    // "formatter": [
+    // {
+    //   "code_action": "source.organizeImports.ruff"
+    // },
+    // {
+    //   "code_action": "source.fixAll.ruff"
+    // }
+    // {
+    //   "language_server": {
+    //     "name": "ruff"
+    //   }
+    // }
+    // ]
+    // },
     "CSS": {
       "language_servers": ["eslint", "vscode-css-language-server"]
     },

@@ -79,9 +79,9 @@
       "left": null,
       "right": null,
       "@ @": "vim::ReplayLastRecording",
-      "ctrl-6": "workspace::ToggleBottomDock",
-      "s a": "vim::PushAddSurrounds",
-      "s s": "vim::Substitute"
+      "ctrl-6": "workspace::ToggleBottomDock"
+      // "s a": "vim::PushAddSurrounds",
+      // "s s": "vim::Substitute"
     }
   },
   {
@@ -89,7 +89,14 @@
     "bindings": {
       "ctrl-y": "editor::ConfirmCompletionReplace",
       "ctrl-h": "editor::ConfirmCompletionInsert",
-      "enter": null
+      "enter": null,
+      "ctrl-b": null
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds"
     }
   },
   {

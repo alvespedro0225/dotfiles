@@ -1,0 +1,79 @@
+@import "tokyo_dark_green.scss";
+
+* {
+    font-family: Hack Nerd Font;
+    font-size: 17px;
+    color: @font;
+    min-height: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+/* MODULES */
+
+/*  Rounds each modules borders */
+.modules-left,
+.modules-center,
+.modules-right {
+    border-radius: 20px;
+    background-color: @background;
+    margin-top: 10px;
+}
+
+.modules-left {
+    padding: 0 6px;
+}
+
+.modules-center {
+    padding: 0 15px;
+}
+
+.modules-right {
+    padding: 0 1px 0 2px;
+}
+
+.modules-right > widget > * {
+    padding: 0 8px;
+}
+/* END MODULES */
+
+/* BUTTON */
+button {
+    border-radius: 20px;
+    padding: 5.5px;
+}
+
+button label {
+    color: @inactive;
+}
+
+button.active label {
+    color: @font;
+}
+/* END BUTTON */
+
+/* TRAY MENU */
+#tray menu {
+    background-color: @menu-bg;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.98);
+}
+
+#tray decoration {
+    box-shadow: none;
+}
+
+#tray menuitem:hover {
+    background-color: @active-menu;
+}
+
+#tray separator {
+    border-left: 1px solid rgba(0, 0, 0, 0.98);
+    border-right: 1px solid rgba(0, 0, 0, 0.98);
+    margin: 3px 0;
+    padding: 0;
+    min-height: 1px;
+}
+
+/* END MENU */
