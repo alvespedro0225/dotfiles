@@ -1,7 +1,7 @@
-@import "tokyo_dark_green.scss";
+@import "colors.scss";
 
 * {
-    font-family: Hack Nerd Font;
+    font-family: Hack Nerd Font Propo;
     font-size: 17px;
     color: @font;
     min-height: 10px;
@@ -25,12 +25,31 @@
     padding: 0 6px;
 }
 
+/* GTK 3.0 doesn't have :empty so i'm tying the background color to the children */
 .modules-center {
-    padding: 0 15px;
+    background-color: transparent;
+}
+
+.modules-center > widget > * {
+    background-color: @background;
+}
+
+.modules-center > widget > *:first-child {
+    padding-left: 15px;
+    border-radius: 20px 0 0 20px;
+}
+
+.modules-center > widget > *:last-child {
+    padding-right: 15px;
+    border-radius: 0 20px 20px 0;
+}
+
+.modules-center > widget > *:only-child {
+    border-radius: 20px;
 }
 
 .modules-right {
-    padding: 0 1px 0 2px;
+    padding: 0 8px 0 6px;
 }
 
 .modules-right > widget > * {

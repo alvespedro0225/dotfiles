@@ -1,95 +1,49 @@
-@define-color wild #a3d2bc;
-@define-color black #090c0c;
-@define-color crayola #18B983;
-@define-color american #394260;
-@define-color charleston #212736;
-@define-color gunmetal #1d2230;
-@define-color platinum #e3e5e5;
-@define-color white #ffffff;
-@define-color bg rgba(0, 0, 0, 0.85);
-
+@define-color font-active rgba(24, 185, 131, 1);
+@define-color font rgba(140, 242, 208, 1);
+@define-color background rgba(0, 56, 64, 0.99);
+@define-color underline rgba(5, 210, 142, 1);
 * {
-  font-family: 'JetBrainsMono Nerd Font';
-  font-size: 18px;
-}
-
-/* Window */
-window {
-  margin: 0px;
-  padding: 10px;
-  border: 0.16em solid @crayola;
-  border-radius: 1rem;
-  background-color: @gunmetal;
-}
-
-/* Inner Box */
-#inner-box {
-  margin: 5px;
-  padding: 10px;
-  border: none;
-  background-color: @gunmetal;
-  /*animation: fadeIn 0.5s ease-in-out both;*/
-}
-
-/* Outer Box */
-#outer-box {
-  margin: 5px;
-  padding: 10px;
-  border: none;
-  background-color: @base;
-}
-
-/* Scroll */
-#scroll {
-  margin: 0px;
-  padding: 10px;
-  border: none;
-  background-color: @base;
-}
-
-/* Input */
-#input {
-  margin: 5px 20px;
-  padding: 10px;
-  border-radius: 1rem;
-  border-color:  @american;
-  color: @wild;
-  background-color: @base;
-  box-shadow: none;
-}
-
-#input image {
     border: none;
-    color: @white;
+    outline: none;
+    box-shadow: none;
+    font-size: 18px;
+    font-family: JetBrainsMono Nerd Font;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    color: @font;
 }
 
-/* Text */
-#text {
-  margin: 5px;
-  border: none;
-  color: @wild;
+#outer-box {
+    background-color: @background;
+    border-radius: 20px;
+}
+
+#entry,
+#input {
+    margin: 0 20px 0 20px;
+}
+
+#input {
+    margin-top: 5px;
+    margin-bottom: 13px;
+    padding: 10px 5px 2px 10px;
+    border-bottom: 2px solid @underline;
+    border-radius: 0;
+}
+
+#input > image:first-child {
+    margin-right: 10px;
 }
 
 #entry {
-  background-color: @base;
+    margin-top: 3px;
 }
 
-/*#entry arrow {
-  border: none;
-  color: @platinum;
-}*/
-
-/* Selected Entry */
-#entry:selected {
-  border: none;
-  outline: none;
+#text {
+    margin-left: 8px;
 }
 
-#entry:selected #text {
-  color: @crayola;
-  outline: none;
-}
-
-#entry:drop(active) {
-  background-color: @american!important;
+#text:selected {
+    color: @font-active;
 }
