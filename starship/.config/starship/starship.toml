@@ -12,13 +12,15 @@ $git_status\
 $c\
 $rust\
 $golang\
-$nodejs\
-$php\
+$dotnet\
 $java\
+$nodejs\
 $kotlin\
 $haskell\
 $python\
-$dotnet\
+$lua\
+$shell\
+$php\
 [](bg:gunmetal fg:charleston)\
 $time\
 [ ](fg:gunmetal)\
@@ -130,6 +132,7 @@ truncation_symbol = "…/"
 "Music" = "󰝚 "
 "Pictures" = " "
 "code" = "󰲋 "
+"Books" = ""
 
 [git_branch]
 symbol = ""
@@ -178,7 +181,14 @@ format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)'
 [dotnet]
 symbol = ""
 style = "bg:charleston"
+detect_extensions = ["cs", "sln"]
 format = '[[ $symbol( $version) ](bg:charleston fg:crayola)]($style)' 
+
+[lua]
+style= "bg:charleston"
+symbol = "🌕"
+format = "[[ $symbol( $version ) ](bg:charleston fg:crayola)]($style)"
+detect_folders = []
 
 [time]
 disabled = false
@@ -188,6 +198,7 @@ format = '[[  $time ](bg:gunmetal fg:wild)]($style)'
 
 [line_break]
 disabled = false
+
 
 [character]
 disabled = false

@@ -32,7 +32,6 @@ export GTK_THEME=Adwaita:dark
 export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
 export QT_STYLE_OVERRIDE=Adwaita-Dark
 export EDITOR=nvim
-export TERM=ghostty
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} -le 2 ]]

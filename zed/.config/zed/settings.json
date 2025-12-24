@@ -18,64 +18,46 @@
     "rust-analyzer": {
       "initialization_options": {
         "assist": {
-          "preferSelf": true
+          "preferSelf": true,
         },
         "check": {
-          "command": "clippy"
+          "command": "clippy",
         },
         "diagnostics": {
           "styleLints": {
-            "enable": true
-          }
-        }
-      }
-    }
-    // "basedpyright": {
-    //   "binary": {
-    //     "path": ".venv/bin/basedpyright-langserver",
-    //     "arguments": ["--stdio"]
-    //   },
-    //   "settings": {
-    //     "python": {
-    //       "pythonPath": ".venv/bin/python"
-    //     },
-    //     "basedpyright.analysis": {
-    //       "diagnosticMode": "workspace",
-    //       "inlayHints": {
-    //         "callArgumentNames": false
-    //       }
-    //     }
-    //   }
-    // }
+            "enable": true,
+          },
+        },
+      },
+    },
+    "lua-language-server": {
+      "settings": {
+        "Lua": {
+          "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+          "diagnostics": {
+            "severity": {
+              "lowercase-global": "Warning",
+              "redefined-local": "Warning",
+              "unreachable-code": "Warning",
+              "unused-local": "Warning",
+              "unused-vararg": "Warning",
+            },
+          },
+        },
+      },
+    },
   },
   "languages": {
-    // "Python": {
-    // "language_servers": ["basedpyright", "ruff", "!pyright"],
-    // "format_on_save": "on",
-    // "formatter": [
-    // {
-    //   "code_action": "source.organizeImports.ruff"
-    // },
-    // {
-    //   "code_action": "source.fixAll.ruff"
-    // }
-    // {
-    //   "language_server": {
-    //     "name": "ruff"
-    //   }
-    // }
-    // ]
-    // },
     "CSS": {
-      "language_servers": ["eslint", "vscode-css-language-server"]
+      "language_servers": ["eslint", "vscode-css-language-server"],
     },
     "C": {
-      "format_on_save": "on"
-    }
+      "format_on_save": "on",
+    },
   },
   "unnecessary_code_fade": 0.4,
   "inlay_hints": {
-    "enabled": true
+    "enabled": true,
   },
   "hover_popover_enabled": false,
   "tabs": {
@@ -83,16 +65,16 @@
     "git_status": true,
     "show_diagnostics": "errors",
     "activate_on_close": "left_neighbour",
-    "show_close_button": "hidden"
+    "show_close_button": "hidden",
   },
   "ui_font_features": {
-    "calt": false
+    "calt": false,
   },
   "buffer_font_features": {
-    "calt": false
+    "calt": false,
   },
   "journal": {
     "path": "~/code",
-    "hour_format": "hour24"
-  }
+    "hour_format": "hour24",
+  },
 }

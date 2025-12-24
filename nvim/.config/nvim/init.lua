@@ -70,7 +70,8 @@ require('lazy').setup({
   { import = 'plugins' },
   { import = 'lsp' },
   { import = 'debuggers' },
-  -- require 'health',
+  { import = 'themes/tokio-moon' },
+  -- require 'health'),
   require 'keymaps',
 }, {
   ui = {
