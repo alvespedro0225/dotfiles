@@ -1,37 +1,85 @@
-return { -- Collection of various small independent plugins/modules
-  'echasnovski/mini.nvim',
+local function get_bytes(bytes)
+  if type(bytes) ~= "number" then
+    return ""
+  end
+
+  local units = { "B", "KiB", "MiB", "GiB" }
+  local count = 1
+  while bytes > 1024 do
+    bytes = bytes / 1024
+    count = count + 1
+  end
+  if count == 1 then
+    return string.format("%d%s", bytes, units[count])
+  else
+    return string.format("%.2f%s", bytes, units[count])
+  end
+end
+
+local icons = {
+  lua = "",
+  rust = "",
+  c = "",
+  cs = "",
+  python = "",
+  typescript = "",
+  javascript = "",
+  go = "",
+}
+
+local function get_file_info()
+  local bar = {}
+  local file_type = ""
+  local extension = vim.bo.filetype
+
+  local icon = icons[extension]
+
+  if icon ~= nil then
+    file_type = icon
+  elseif extension ~= nil and extension ~= "" then
+    file_type = extension
+  end
+
+  if file_type ~= nil and file_type ~= "" then
+    bar[#bar + 1] = file_type
+  end
+
+  local encoding = vim.bo.fileencoding or vim.bo.encoding
+
+  if encoding ~= nil and encoding ~= "" then
+    bar[#bar + 1] = encoding
+  end
+
+  local format = vim.bo.fileformat
+
+  if format == "unix" then
+    bar[#bar + 1] = ""
+  elseif format ~= nil and format ~= "" then
+    bar[#bar + 1] = format
+  end
+
+  local bytes = get_bytes(vim.fn.wordcount().bytes)
+
+  if bytes ~= "" then
+    bar[#bar + 1] = bytes
+  end
+  return vim.fn.join(bar, " | ")
+end
+
+return {
+  "nvim-mini/mini.nvim",
+  version = false,
   config = function()
-    -- Better Around/Inside textobjects
-    --
-    -- Examples:
-    --  - va)  - [V]isually select [A]round [)]paren
-    --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
-    --  - ci'  - [C]hange [I]nside [']quote
-    require('mini.ai').setup { n_lines = 500 }
-
-    -- Add/delete/replace surroundings (brackets, quotes, etc.)
-    --
-    -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-    -- - sd'   - [S]urround [D]elete [']quotes
-    -- - sr)'  - [S]urround [R]eplace [)] [']
-    require('mini.surround').setup()
-
-    -- Simple and easy statusline.
-    --  You could remove this setup call if you don't like it,
-    --  and try some other statusline plugin
-    local statusline = require 'mini.statusline'
-    -- set use_icons to true if you have a Nerd Font
+    require("mini.surround").setup {}
+    local statusline = require "mini.statusline"
     statusline.setup { use_icons = vim.g.have_nerd_font }
 
-    -- You can configure sections in the statusline by overriding their
-    -- default behavior. For example, here we set the section for
-    -- cursor location to LINE:COLUMN
     ---@diagnostic disable-next-line: duplicate-set-field
     statusline.section_location = function()
-      return '%2l:%-2v'
+      return "%2l:%-2v"
     end
 
-    -- ... and there is more!
-    --  Check out: https://github.com/echasnovski/mini.nvim
+    ---@diagnostic disable-next-line: duplicate-set-field
+    statusline.section_fileinfo = get_file_info
   end,
 }

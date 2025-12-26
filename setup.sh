@@ -5,7 +5,7 @@ null="/dev/null"
 
 de="hyprland hyprlock hyprpaper wofi waybar hyprpicker hyprshot uwsm qt5-wayland qt6-wayland hyprland-qt-support xdg-desktop-portal-hyprland hyprpolkitagent"
 languages="nodejs dotnet-sdk aspnet-runtime shellcheck"
-utils="stow docker postgresql ripgrep sudo-rs gnome-disk-utility"
+utils="stow docker postgresql ripgrep sudo-rs gnome-disk-utility fd"
 terminal="yazi starship tmux btop ghostty fish kitty"
 extra="zed obsidian qbittorrent vlc ncspot"
 all="$de $languages $utils $terminal $extra"

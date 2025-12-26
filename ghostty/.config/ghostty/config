@@ -3,7 +3,4 @@ font-family = Hack Nerd Font
 font-size = 14
 background-opacity = 0.93 
 gtk-titlebar = false
-keybind = ctrl+comma=ignore
-keybind = ctrl+q=text:connect D9:1B:56:B7:81:9F
-keybind = performable:ctrl+c=copy_to_clipboard
-keybind = performable:ctrl+v=paste_from_clipboard
+mouse-hide-while-typing 

@@ -1,8 +1,8 @@
 return {
-  "windwp/nvim-ts-autotag",
+  'windwp/nvim-ts-autotag',
   opts = {
     per_filetype = {
-      ["tsx"] = {
+      ['tsx'] = {
         enable_close = true,
         enable_rename = true,
       },
