@@ -23,7 +23,7 @@ export PATH="$PATH:/home/pedro/.dotnet/tools" #dotnet
 export PATH="$PATH:/usr/bin/kitty" #kitty
 export PATH="$PATH:/home/pedro/.cargo/bin"
 export PATH="$PATH:/opt/flutter/bin"
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Exporting ENV variables
 

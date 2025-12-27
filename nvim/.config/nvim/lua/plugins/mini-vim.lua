@@ -1,21 +1,3 @@
-local function get_bytes(bytes)
-  if type(bytes) ~= "number" then
-    return ""
-  end
-
-  local units = { "B", "KiB", "MiB", "GiB" }
-  local count = 1
-  while bytes > 1024 do
-    bytes = bytes / 1024
-    count = count + 1
-  end
-  if count == 1 then
-    return string.format("%d%s", bytes, units[count])
-  else
-    return string.format("%.2f%s", bytes, units[count])
-  end
-end
-
 local icons = {
   lua = "",
   rust = "",
@@ -26,6 +8,28 @@ local icons = {
   javascript = "",
   go = "",
 }
+
+local function get_bytes(bytes)
+  if type(bytes) ~= "number" then
+    return ""
+  end
+
+  local units = { "B", "KiB", "MiB", "GiB" }
+  local count = 1
+
+  while bytes > 1024 do
+    bytes = bytes / 1024
+    count = count + 1
+  end
+
+  if count == 1 then
+    return string.format("%d%s", bytes, units[count])
+  elseif count > 4 then
+    return ""
+  else
+    return string.format("%.2f%s", bytes, units[count])
+  end
+end
 
 local function get_file_info()
   local bar = {}

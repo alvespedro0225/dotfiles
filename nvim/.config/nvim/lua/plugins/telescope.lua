@@ -51,6 +51,6 @@ return {
       builtin.find_files { cwd = "~/code" }
     end, { desc = "[S]each Code" })
 
-    require "telescope.multigrep"
+    require("telescope.multigrep").setup {}
   end,
 }

@@ -6,6 +6,11 @@ return {
     lint.linters_by_ft = {
       c = { "clangtidy" },
       rust = { "clippy" },
+      typescript = { "biomejs" },
+      javascript = { "biomejs" },
+      css = { "biomejs" },
+      html = { "biomejs" },
+      sh = { "shellcheck" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

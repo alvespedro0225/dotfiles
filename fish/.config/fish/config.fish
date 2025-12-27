@@ -12,7 +12,7 @@ if status is-login
 end
 
 if status is-interactive
-    bind ctrl-f y repaint
+    bind ctrl-f __yazi repaint
 
     # Load starship
     starship init fish | source
@@ -23,4 +23,7 @@ if status is-interactive
     alias sudo="sudo-rs"
     alias zed="zeditor"
     alias find="fd"
+	set __ZO_FZF_OPTS 1
+	set __ZO_RESOLVE_SYMLINKS 1
+	zoxide init fish --cmd=cd | source 
 end

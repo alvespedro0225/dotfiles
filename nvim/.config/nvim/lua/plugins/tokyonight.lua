@@ -4,6 +4,7 @@ return {
   priority = 1000,
   opts = {},
   config = function()
+    ---@diagnostic disable: missing-fields
     require("tokyonight").setup {
       styles = {
         comments = { italic = false },

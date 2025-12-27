@@ -53,7 +53,11 @@ local live_multigrep = function(opts)
     :find()
 end
 
-M.setup = function() end
-
-vim.keymap.set("n", "<leader>fg", live_multigrep, { desc = "[G]reps CWD possibly matches by [F]ile" })
+M.setup = function(opts)
+  opts = opts or {}
+  opts.keymap = opts.keymap or "<leader>fg"
+  vim.keymap.set("n", opts.keymap, function()
+    live_multigrep(opts)
+  end, { desc = "[G]reps CWD possibly matches by [F]ile" })
+end
 return M
